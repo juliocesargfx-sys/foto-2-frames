@@ -2,7 +2,7 @@
 
 Página que transforma qualquer imagem em um vídeo MP4 9:16 com 2 frames, para postar no Instagram.
 
-**No ar:** https://juliocesargfx-sys.github.io/foto-2-frames/
+**No ar:** https://foto2video.com.br
 
 - A imagem é cortada para preencher 1080×1920. A pessoa pode arrastar a foto e dar zoom (com dois dedos, a roda do mouse ou o controle deslizante) antes de gerar.
 - O vídeo sai em H.264 (High), 30 fps, com 2 frames (cerca de 0,07 s), sem áudio, com o `moov` no início do arquivo.
