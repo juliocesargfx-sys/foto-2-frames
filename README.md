@@ -1,4 +1,4 @@
-# Foto → Vídeo 2 frames
+# Foto2Video
 
 Página que transforma qualquer imagem em um vídeo MP4 9:16 com 2 frames, para postar no Instagram.
 
