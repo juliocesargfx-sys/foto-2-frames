@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Foto → Vídeo 2 frames</title>
+  <meta name="description" content="Transforme uma foto em um vídeo 9:16 de 2 frames para postar no Instagram. Grátis e direto no seu aparelho.">
+  <meta name="theme-color" content="#0f0f12">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%27 y1=%270%27 x2=%271%27 y2=%271%27%3E%3Cstop offset=%270%27 stop-color=%27%23ff6a3d%27/%3E%3Cstop offset=%271%27 stop-color=%27%23c13584%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x=%279%27 y=%272%27 width=%2714%27 height=%2728%27 rx=%274%27 fill=%27url(%23g)%27/%3E%3Cpath d=%27M14 12v8l6-4z%27 fill=%27%23fff%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1>Foto → Vídeo <span class="accent">2 frames</span></h1>
+      <p class="lead">Transforme qualquer imagem em um vídeo 9:16 de 2 frames para postar no Instagram.
+        Tudo acontece no seu aparelho: a foto não é enviada para nenhum servidor.</p>
+    </header>
+
+    <section id="step-pick" class="pick">
+      <label id="dropzone" class="dropzone">
+        <input type="file" id="file" accept="image/*" hidden>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0-4.5 4.5M12 4l4.5 4.5M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <strong>Escolher imagem</strong>
+        <span><span class="mouse-only">ou arraste o arquivo para cá · </span>JPG, PNG ou WebP</span>
+      </label>
+    </section>
+
+    <section id="step-edit" class="edit" hidden>
+      <div class="stage">
+        <canvas id="canvas" width="1080" height="1920" tabindex="0"
+          aria-label="Prévia do vídeo em 9:16. Arraste para ajustar o enquadramento; use as setas do teclado para mover e + ou - para zoom."></canvas>
+      </div>
+
+      <div class="panel">
+        <p class="hint">Arraste a foto para escolher o enquadramento. <span class="touch-only">Use dois dedos ou o controle abaixo para o zoom.</span><span class="mouse-only">Use a roda do mouse ou o controle abaixo para o zoom.</span></p>
+
+        <label class="zoom">
+          <span>Zoom</span>
+          <input type="range" id="zoom" min="1" max="4" step="0.01" value="1">
+        </label>
+
+        <div class="row">
+          <button type="button" id="center" class="btn ghost">Centralizar</button>
+          <button type="button" id="change" class="btn ghost">Trocar imagem</button>
+        </div>
+
+        <p id="warn" class="warn" hidden>A imagem tem pouca resolução para 1080×1920. O vídeo vai ser gerado, mas pode ficar menos nítido.</p>
+
+        <button type="button" id="generate" class="btn primary">Gerar vídeo</button>
+
+        <div id="done" class="done" hidden>
+          <p class="ok">✓ Vídeo pronto</p>
+          <p id="meta" class="meta"></p>
+          <button type="button" id="share" class="btn primary" hidden>Salvar ou compartilhar</button>
+          <a id="download" class="btn primary" href="#" download>Baixar vídeo</a>
+          <p class="small">Mudou o enquadramento? É só ajustar a foto que o botão de gerar volta.</p>
+        </div>
+      </div>
+    </section>
+
+    <p id="error" class="error" role="alert" hidden></p>
+  </main>
+
+  <footer class="foot">
+    Vídeo MP4 H.264 · 1080×1920 · 2 frames a 30 fps.
+  </footer>
+</body>
+</html>

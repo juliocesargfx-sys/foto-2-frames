@@ -1,0 +1,5 @@
+.DS_Store
+node_modules/
+# ferramentas de teste ficam só na cópia local
+tests/
+package.json
